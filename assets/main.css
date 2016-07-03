@@ -13,7 +13,8 @@
   float:left;
   width: 25%;
   padding: 0 10px;
-  margin:0 0 10px 0;
+  margin:0 0 20px 0;
+  transition: all 0.3s;
 }
   /* Three per row */
   .easy-staff-container .staff-member.three{
@@ -23,8 +24,10 @@
   .easy-staff-container .staff-member.two{
     width:50%;
   }
+  /*Full width row */
   .easy-staff-container .staff-member.full{
     width:100%;
+    margin-bottom:20px;
   }
 
 .easy-staff-container .staff-member .staff-photo {
@@ -43,72 +46,204 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-image:url('noprofile.png');
+  }
+  .easy-staff-container .staff-member.full .staff-photo{
+    float:left;
+    width: 22%;
   }
 
-.easy-staff-container .staff-member .title{
+
+/* When the staff are shown full width */
+.easy-staff-container .staff-member.full .staff-block{
+  float:right;
+  width:75%;
+  padding-top:35px;
+}
+  .easy-staff-container .staff-member .title{
+    float:left;
+    width:100%;
+    height:auto;
+    margin:0;
+    text-align:center;
+    font-size: 20px;
+    cursor: default;
+    font-weight: 900;
+    color:#3e6391;
+    transition: all 0.6s;
+  }
+    .easy-staff-container .staff-member .title.link{
+      text-decoration: none;
+      cursor:pointer;
+    }
+    .easy-staff-container .staff-member .title.link:hover{
+      text-decoration: underline;
+      color: #6a8bb3;
+      transition: all 0.3s;
+    }
+
+    .easy-staff-container .staff-member.full .title{
+      text-align:left;
+    }
+
+
+  .easy-staff-container .staff-member .role{
+    float:left;
+    width: 100%;
+    height: auto;
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    cursor:default;
+    text-align:center;
+  }
+    .easy-staff-container .staff-member.full .role{
+      text-align:left;
+    }
+
+  .easy-staff-container .staff-member .content{
+    float:left;
+    width:100%;
+    border-top: 1px solid #3e6391;
+    padding:10px 0;
+    min-height: 250px;
+    text-align:center;
+    position:relative;
+    padding-bottom:70px;
+  }
+    .easy-staff-container .staff-member .content p{
+      font-size:16px;
+      line-height:26px;
+      margin:0px;
+      cursor: default;
+    }
+
+    .easy-staff-container .staff-member.two .content{
+      text-align:left;
+      min-height:170px;
+    } 
+    .easy-staff-container .staff-member.full .content{
+      text-align: left;
+      min-height: 0px;
+    }
+    .easy-staff-container .staff-member.related .content{
+      min-height:0;
+      padding:50px 0 0 0;
+    }
+
+
+  .easy-staff-container .staff-member .viewProfile{
+    position: absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: 50px;
+    line-height: 48px;
+    background-color: #3e6391;
+    color: #fff;
+    text-align:center;
+    text-decoration: none;
+    padding: 0;
+    margin-top:0px;
+    margin-bottom:2px;
+    border-bottom: 2px solid #21344c;
+    transition: all 0.6s;
+    font-weight:600;
+  }
+    .easy-staff-container .staff-member .viewProfile:hover{
+      background-color: #6a8bb3;
+      color: #fff;
+      border-bottom:0;
+      margin-top: 2px;
+      margin-bottom:0px;
+      transition: all 0.1s;
+    }
+
+    .easy-staff-container .staff-member.two .viewProfile,
+    .easy-staff-container .staff-member.full .viewProfile{
+      clear:both;
+      margin-right:auto;
+      margin-left:auto;
+      left: 50%;
+      width:224px;
+      margin-left: -112px;
+      border-radius:4px;
+    }
+    .easy-staff-container .staff-member.full .viewProfile{
+      margin:0;
+      left:auto;
+      right:0;
+      bottom:0;
+    }
+
+/* Single Staff member page details */
+.staff-member-banner{
+  float:  left;
+  width:  100%;
+  height: auto;
+  position: relative;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #ccc;
+}
+  .staff-member-banner:after{
+    content:"";
+    position: absolute;
+    left: 0;
+    top:0;
+    width:100%;
+    height: 100%;
+    z-index: 10;
+    background: rgba(50, 50, 50, 0.2) none repeat scroll 0 0;
+  }
+
+  .staff-member-banner .text{
+    float:left;
+    width:100%;
+    padding:150px 0 125px 0;
+    text-align:center;
+    position: relative;
+    z-index: 12;
+  }
+  .staff-member-banner .text h1{
+    font-size:42px;
+    line-height: normal;
+    color: #000;
+    margin: 0 0 5px 0;
+    color: #fff;
+  }
+  .staff-member-banner .text h3{
+    float:left;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    line-height: normal;
+    font-size: 30px;
+    color: #fff;
+  }
+
+
+.staff-member-container{
+  display:block;
+  margin:0 auto;
+  clear:both;
+  width: 1024px;
+  height:auto;
+  background-color: #fff;
+  padding: 20px 40px;
+  overflow:hidden;
+}
+/*Related staff section */
+.related-staff-members{
   float:left;
   width:100%;
   height:auto;
-  margin:0;
+  margin:0 0 20px 0;
+  font-size: 24px;
+  padding:20px 0 0 0;
   text-align:center;
-  font-size: 20px;
-  cursor: default;
   font-weight: 900;
   color:#3e6391;
+  border-top: 1px solid #21344c;
 }
-  .easy-staff-container .staff-member .title.link{
-    text-decoration: none;
-    cursor:pointer;
-  }
-  .easy-staff-container .staff-member .title.link:hover{
-    text-decoration: underline;
-    color: #6a8bb3;
-  }
-
-.easy-staff-container .staff-member .role{
-  float:left;
-  width: 100%;
-  height: auto;
-  margin: 0 0 10px 0;
-  font-size: 18px;
-  cursor:default;
-  text-align:center;
-}
-
-.easy-staff-container .staff-member .content{
-  float:left;
-  width:100%;
-  border-top: 1px solid #3e6391;
-  padding:10px 0;
-  text-align:center;
-}
-  .easy-staff-container .staff-member .content p{
-    font-size:16px;
-    line-height:26px;
-    margin:0px;
-    cursor: default;
-  }
-
-.easy-staff-container .staff-member .viewProfile{
-  float:left;
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  background-color: #3e6391;
-  color: #fff;
-  text-align:center;
-  text-decoration: none;
-  padding: 0;
-  margin-top:0px;
-  margin-bottom:2px;
-  border-bottom: 2px solid #21344c;
-  transition: all 0.6s;
-}
-  .easy-staff-container .staff-member .viewProfile:hover{
-    background-color: #6a8bb3;
-    color: #fff;
-    border-bottom:0;
-    margin-top: 2px;
-    margin-bottom:0px;
-    transition: all 0.3s;
-  }
