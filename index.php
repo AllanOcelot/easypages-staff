@@ -245,7 +245,8 @@ function easyStaffQuery($atts){
         </div>
         <div class="staff-block">
           <?php if($displayOptions[ 'staffname_is_link' ] == true){ ?>
-              <a class="title link" href="<?php echo the_title(); ?>" itemType="name"><?php echo the_title(); ?></a>
+              <a class="title link" href="<?php echo the_permalink(); ?>" itemType="name">
+                <?php echo the_title(); ?></a>
           <?php }else{ ?>
           <div class="title" itemType="name"><?php echo the_title(); ?></div>
           <?php } ?>

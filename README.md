@@ -33,7 +33,7 @@ The following can be edited on the individual staff member's edit page.
  The following are shortcodes, along with their options:
 
  ```
-  ['easystaff']
+  ['easyStaff']
  ```
  This is the main shortcode and will query all existing staff members and output them with our HTML. You can give the short code the following options.
 
