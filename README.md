@@ -72,5 +72,5 @@ This page is useful if you wish to give a history of the employee, or conduct an
 
 
 #Notes:
- - Current version 0.5alpha. May be bugs. Mostly missing advanced features I would like to add.
+ - Current version 0.7alpha. May be bugs. Mostly missing advanced features I would like to add.
  - Post Type name is "staff_members" , incase you wish to query it.
