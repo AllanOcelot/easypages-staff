@@ -207,7 +207,7 @@ function easyStaffQuery($atts){
   if($displayOptions[ 'staff_order' ] == "new"){
     $args = array(
     	'post_type' => 'staff_members',
-      'posts_per_page' => '-1', 
+      'posts_per_page' => '-1',
       'orderby' => 'meta_value',
       'order' => 'DESC'
     );
@@ -331,6 +331,7 @@ function easyStaffRelatedStaff($atts){
 
   $pull_quote_atts = shortcode_atts( array(
       'current_post_id' => '0',
+      'staffname_is_link' => true
   ), $atts );
 
   //How many related staff members should it get?
@@ -379,7 +380,14 @@ function easyStaffRelatedStaff($atts){
           ></div>
         </div>
         <div class="staff-block">
+
+          <?php if($pull_quote_atts[ 'staffname_is_link' ] == true){ ?>
+              <a class="title link" href="<?php echo the_permalink(); ?>" itemType="name">
+                <?php echo the_title(); ?></a>
+          <?php }else{ ?>
           <div class="title" itemType="name"><?php echo the_title(); ?></div>
+          <?php } ?>
+
           <?php if($rolesEnabled == true){ ?>
           <div class="role" itemtype="jobTitle">
             <?php if($staff_role == null || $staff_role == ""){
