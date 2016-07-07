@@ -195,16 +195,48 @@ function easyStaffQuery($atts){
       'rolesEnabled'             => true,
     //Display link to post type as button?
       'staffname_button_visible' => true,
+    //Give the User the ability to order the staff from the top (new, old, random)
+      'staff_order'             => "new",
     //If so, what text should it have?
       'staffname_button_text'    => "Read More",
   ), $atts );
 
 
+  //We will change this query based on the options above
+  //Show the new members of staff at the top
+  if($displayOptions[ 'staff_order' ] == "new"){
+    $args = array(
+    	'post_type' => 'staff_members',
+      'posts_per_page' => '-1', 
+      'orderby' => 'meta_value',
+      'order' => 'DESC'
+    );
+  }
+  if($displayOptions[ 'staff_order' ] == "old"){
+    $args = array(
+    	'post_type' => 'staff_members',
+      'posts_per_page' => '-1',
+      'orderby' => 'meta_value',
+      'order' => 'ASC'
+    );
+  }
+  if($displayOptions[ 'staff_order' ] == "random"){
+    $args = array(
+    	'post_type' => 'staff_members',
+      'posts_per_page' => '-1',
+      'orderby' => 'rand'
+    );
+  }
 
-  $args = array(
-  	'post_type' => 'staff_members',
-    'posts_per_page' => '-1'
-  );
+
+
+
+
+
+
+
+
+
   $the_query = new WP_Query( $args );
 
   // Loop Over Results

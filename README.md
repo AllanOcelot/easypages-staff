@@ -47,6 +47,16 @@ The following can be edited on the individual staff member's edit page.
    //Should the staff member's roles be visible (Takes boolean value: true / false. Default: true.)
    rolesEnabled = true
 
+   //If you wish to order the way the staff are output.  
+   //Display new staff first.
+   staff_order = "new"
+
+   //Display old staff first.
+   staff_order = "old"
+
+   //Display staff in random order.
+   staff_order = "random"
+
    //Display link to the staff members profile page as a button? (Takes boolean value: true / false. Default: true.)
    staffname_button_visible = true
    //If so, what text should it have? (Takes a string. Default: "Read More")
