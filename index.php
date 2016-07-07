@@ -273,7 +273,7 @@ function easyStaffQuery($atts){
             $content .= 'style="background-image:url(' . $feat_image .')"';
           }
    $content .=
-             '</div>
+             '></div>
         </div>';
 
     $content .= '<div class="staff-block">';
@@ -299,7 +299,6 @@ function easyStaffQuery($atts){
       }
       $content .='
           </div>
-        </div>
         </div>
       </div>';
   	}
