@@ -239,80 +239,80 @@ function easyStaffQuery($atts){
 
   $the_query = new WP_Query( $args );
 
+  $content = "";
+
   // Loop Over Results
   if ( $the_query->have_posts() ) {
-  	echo "<div class='easy-staff-container'>";
+  	$content.= "<div class='easy-staff-container'>";
   	while ( $the_query->have_posts() ) {
   		$the_query->the_post();
-
       //Have they includes a role for the staff member?
       $staff_role = get_post_meta( get_the_ID(), 'job-role', true );
       //If the post has a featured image - get it and use it.
       $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 
-      ?>
-      <div class="staff-member
-        <?php
-          if($displayOptions[ 'staff_per_row' ] == 1){
-            echo "full";
+      $content .='<div class="staff-member ';
+
+      if($displayOptions[ 'staff_per_row' ] == 1){
+            $content .= "full";
           }
           if($displayOptions[ 'staff_per_row' ] == 2){
-            echo "two";
+            $content .= "two";
           }
           if($displayOptions[ 'staff_per_row' ] == 3){
-            echo "three";
+            $content .= "three";
           }
           if($displayOptions[ 'staff_per_row' ] == 4){
             //Echo nothing - because default is four to a row
-        } ?>
-      " itemscope itemtype="https://schema.org/Person">
-        <div class="staff-photo">
-          <div class="image"
-            <?php
-              if($feat_image != null){ ?>
-               style="background-image:url(<?php echo $feat_image; ?>)"
-            <?php }
-            ?>
-          ></div>
-        </div>
-        <div class="staff-block">
-          <?php if($displayOptions[ 'staffname_is_link' ] == true){ ?>
-              <a class="title link" href="<?php echo the_permalink(); ?>" itemType="name">
-                <?php echo the_title(); ?></a>
-          <?php }else{ ?>
-          <div class="title" itemType="name"><?php echo the_title(); ?></div>
-          <?php } ?>
-          <?php if($displayOptions[ 'rolesEnabled' ] == true){ ?>
-          <div class="role" itemtype="jobTitle">
-            <?php if($staff_role == null || $staff_role == ""){
-              echo "&nbsp;";
-            }else{
-              echo $staff_role;
-            } ?>
+        }
+    $content .='" itemscope itemtype="https://schema.org/Person">';
+
+    $content .= '<div class="staff-photo">
+          <div class="image" ';
+          if($feat_image != null){
+            $content .= 'style="background-image:url(' . $feat_image .')"';
+          }
+   $content .=
+             '</div>
+        </div>';
+
+    $content .= '<div class="staff-block">';
+      if($displayOptions[ "staffname_is_link" ] == true){
+       $content .='<a class="title link" href=" '.  get_the_permalink() .'" itemType="name">'. get_the_title() .'</a> ';
+      }else{
+       $content .= '<div class="title" itemType="name"> '. get_the_title() .'</div>';
+      }
+
+    if($displayOptions[ 'rolesEnabled' ] == true){
+      $content .='<div class="role" itemtype="jobTitle">';
+      if($staff_role == null || $staff_role == ""){
+        $content .= '"&nbsp;" ';
+      }else{
+        $content .= $staff_role;
+      }
+        $content .= '</div>';
+      }
+      $content .= '<div class="content">'. get_the_excerpt() ;
+
+      if($displayOptions[ 'staffname_button_visible' ] == true){
+        $content .='<a class="viewProfile" href="'. get_the_permalink() .'">'. $displayOptions['staffname_button_text'] .'</a>';
+      }
+      $content .='
           </div>
-          <?php } ?>
-          <div class="content">
-            <?php echo the_excerpt(); ?>
-            <?php if($displayOptions[ 'staffname_button_visible' ] == true){ ?>
-            <a class="viewProfile" href="<?php echo the_permalink(); ?>">
-              <?php echo $displayOptions['staffname_button_text']; ?>
-            </a>
-            <?php } ?>
-          </div>
         </div>
-      </div>
-      <?php
+        </div>
+      </div>';
   	}
-  	echo '</div>';
+  	$content .= '</div>';
   } else {
   	// no posts found
   }
   /* Restore original Post Data */
   wp_reset_postdata();
+  return $content;
 }
 
-## Add funciton as shortcode so user can call it ##
-add_shortcode('easyStaff' , 'easyStaffQuery');
+
 
 ########################################################
 #
@@ -413,8 +413,7 @@ function easyStaffRelatedStaff($atts){
   /* Restore original Post Data */
   wp_reset_postdata();
 }
-## Add funciton as shortcode so user can call it ##
-add_shortcode('easyStaffRelated' , 'easyStaffRelatedStaff');
+
 
 ########################################################
 ##### Create the single post type page for the staff members
@@ -456,3 +455,11 @@ function easyStaffArchive( $template ) {
   }
   return $template;
 }
+
+
+
+## Add funciton as shortcode so user can call it ##
+add_shortcode('easyStaff' , 'easyStaffQuery');
+
+## Add funciton as shortcode so user can call it ##
+add_shortcode('easyStaffRelated' , 'easyStaffRelatedStaff');
