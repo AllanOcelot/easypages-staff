@@ -1,6 +1,9 @@
+![EasyPages: Staff](http://i.imgur.com/DUKEwbQ.png)
+
+
 #Easypages - Staff / Meet the team.
->Easypages Staff is a plugin for Wordpress that allows you to quickly and effortlessly add a "Staff" section to any existing Wordpress site.
->The plugin creates a custom post type behind the scenes and allows you to add staff members via the Wordpress admin menu.
+>Easypages Staff is a plugin for Wordpress that allows you to quickly and effortlessly add a "Staff" functionality to any existing Wordpress site.
+>The plugin creates a custom post type behind the scenes and allows you to add staff members via the Wordpress admin menu, each staff member will be displayed on the staff page and each staff member has their own profile page that can be edited.
 
 <hr>
 
