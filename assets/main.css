@@ -70,9 +70,10 @@
     font-size: 20px;
     cursor: default;
     font-weight: 900;
-    color:#3e6391;
+    color:#00000;
     box-shadow: none;
-    padding-bottom: 10px;
+    padding: 10px 0;
+    margin-bottom: 10px;
     border-bottom: 1px solid #000;
     transition: all 0.6s;
   }
@@ -81,7 +82,7 @@
       cursor:pointer;
     }
     .easy-staff-container .staff-member .title.link:hover{
-      color: #6a8bb3;
+      color: #524E4E;
       cursor: pointer;
       box-shadow: none;
       transition: all 0.3s;
@@ -95,23 +96,16 @@
     float:left;
     width: 100%;
     height: auto;
-    margin: 0 0 10px 0;
-    padding: 10px 0; 
+    color:#000;
     font-size: 14px;
     cursor:default;
     text-align:center;
-    border-bottom: 1px solid #000;
+    border: none;
   }
-    .easy-staff-container .staff-member.full .role{
-      text-align:left;
-    }
-
   .easy-staff-container .staff-member .content{
     float:left;
     width:100%;
-    padding:20px 0 60px 0;
-    min-height: 250px;
-    position:relative;
+    padding: 10px 0;
   }
     .easy-staff-container .staff-member .content p{
       font-size:16px;
@@ -130,29 +124,29 @@
     }
     .easy-staff-container .staff-member.related .content{
       min-height:0;
-      padding:50px 0 0 0;
     }
 
 
   .easy-staff-container .staff-member .viewProfile{
-    position: absolute;
-    bottom:0;
-    left:0;
-    width: 100%;
+    display: block;
+    margin: 0 auto;
     height: 50px;
     line-height: 52px;
-    background-color: #3e6391;
+    background-color: #000;
     color: #fff;
-    text-align:center;
+    text-align: center;
     text-decoration: none;
     padding: 0;
-    transition: all 0.3s;
-    font-weight:600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-size: 14px;
+    border-radius: 30px;
+    width: 80%;
+    font-weight: 400;
+    transition: all 0.3s;
   }
     .easy-staff-container .staff-member .viewProfile:hover{
-      background-color: #6a8bb3;
+      background-color: #524E4E;
       height: 50px;
       color: #fff;
       box-shadow: none;
@@ -220,10 +214,13 @@
     float:left;
     width: 100%;
     height: auto;
+    text-shadow: 1px 2px 1px rgba(0,0,0,0.9);
     margin: 0;
     line-height: normal;
-    font-size: 30px;
+    font-size: 22px;
     color: #fff;
+    padding: 0;
+    cursor: default;
   }
 
 
@@ -258,15 +255,22 @@
   height:auto;
   margin: 0 auto;
   font-size: 24px;
-  padding:20px 0 0 0;
+  margin-top: 20px;
+  padding:30px 0 0 0;
   text-align:center;
   font-weight: 900;
   color:#3e6391;
-  border-top: 1px solid #21344c;
+  border-top: 1px solid #000;
 }
 
 .related-staff-members h3{
   margin: 0;
   padding: 0;
   line-height: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #000;
+  margin-bottom: 60px;
 }

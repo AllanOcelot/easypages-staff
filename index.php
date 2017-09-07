@@ -198,7 +198,7 @@ function easyStaffQuery($atts){
     //Give the User the ability to order the staff from the top (new, old, random)
       'staff_order'             => "new",
     //If so, what text should it have?
-      'staffname_button_text'    => "Read More",
+      'staffname_button_text'    => "View Profile",
   ), $atts );
 
 
@@ -282,7 +282,7 @@ function easyStaffQuery($atts){
       }
 
       //Display the excerpt
-      $content .= '<div class="content"><p>'. get_the_excerpt() . '</p>';
+      $content .= '<div class="content"><p></p>';
 
       //If the user wants us to display the staff buttons, do so
       if($displayOptions[ 'staffname_button_visible' ] == true){
