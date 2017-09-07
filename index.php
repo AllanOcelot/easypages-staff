@@ -5,7 +5,7 @@
  * Description: This plugin adds a "Meet the team" and "our Staff" functionality to Wordpress
  * Version: 1.0.0
  * Author: Allan McKernan
- * Author URI:
+ * Author URI: http://www.workofcode.com
  * License: GPL2
  */
 
@@ -228,15 +228,6 @@ function easyStaffQuery($atts){
     );
   }
 
-
-
-
-
-
-
-
-
-
   $the_query = new WP_Query( $args );
 
   $content = "";
@@ -283,20 +274,22 @@ function easyStaffQuery($atts){
        $content .= '<div class="title" itemType="name"> '. get_the_title() .'</div>';
       }
 
-    if($displayOptions[ 'rolesEnabled' ] == true){
-      $content .='<div class="role" itemtype="jobTitle">';
-      if($staff_role == null || $staff_role == ""){
-        $content .= '"&nbsp;" ';
-      }else{
-        $content .= $staff_role;
-      }
+      //If the user has roles enabled, display them
+      if($displayOptions[ 'rolesEnabled' ] == true && $staff_role != null){
+        $content .='<div class="role" itemtype="jobTitle">';
+          $content .= $staff_role;
         $content .= '</div>';
       }
-      $content .= '<div class="content">'. get_the_excerpt() ;
 
+      //Display the excerpt
+      $content .= '<div class="content"><p>'. get_the_excerpt() . '</p>';
+
+      //If the user wants us to display the staff buttons, do so
       if($displayOptions[ 'staffname_button_visible' ] == true){
         $content .='<a class="viewProfile" href="'. get_the_permalink() .'">'. $displayOptions['staffname_button_text'] .'</a>';
       }
+
+      //The closing divs.
       $content .='
           </div>
         </div>

@@ -12,6 +12,7 @@
 .easy-staff-container .staff-member{
   float:left;
   width: 25%;
+  min-width: 230px;
   padding: 0 10px;
   margin:0 0 20px 0;
   transition: all 0.3s;
@@ -70,6 +71,9 @@
     cursor: default;
     font-weight: 900;
     color:#3e6391;
+    box-shadow: none;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
     transition: all 0.6s;
   }
     .easy-staff-container .staff-member .title.link{
@@ -77,8 +81,9 @@
       cursor:pointer;
     }
     .easy-staff-container .staff-member .title.link:hover{
-      text-decoration: underline;
       color: #6a8bb3;
+      cursor: pointer;
+      box-shadow: none;
       transition: all 0.3s;
     }
 
@@ -86,15 +91,16 @@
       text-align:left;
     }
 
-
   .easy-staff-container .staff-member .role{
     float:left;
     width: 100%;
     height: auto;
     margin: 0 0 10px 0;
-    font-size: 18px;
+    padding: 10px 0; 
+    font-size: 14px;
     cursor:default;
     text-align:center;
+    border-bottom: 1px solid #000;
   }
     .easy-staff-container .staff-member.full .role{
       text-align:left;
@@ -103,12 +109,9 @@
   .easy-staff-container .staff-member .content{
     float:left;
     width:100%;
-    border-top: 1px solid #3e6391;
-    padding:10px 0;
+    padding:20px 0 60px 0;
     min-height: 250px;
-    text-align:center;
     position:relative;
-    padding-bottom:70px;
   }
     .easy-staff-container .staff-member .content p{
       font-size:16px;
@@ -120,7 +123,7 @@
     .easy-staff-container .staff-member.two .content{
       text-align:left;
       min-height:170px;
-    } 
+    }
     .easy-staff-container .staff-member.full .content{
       text-align: left;
       min-height: 0px;
@@ -137,25 +140,23 @@
     left:0;
     width: 100%;
     height: 50px;
-    line-height: 48px;
+    line-height: 52px;
     background-color: #3e6391;
     color: #fff;
     text-align:center;
     text-decoration: none;
     padding: 0;
-    margin-top:0px;
-    margin-bottom:2px;
-    border-bottom: 2px solid #21344c;
-    transition: all 0.6s;
+    transition: all 0.3s;
     font-weight:600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
     .easy-staff-container .staff-member .viewProfile:hover{
       background-color: #6a8bb3;
+      height: 50px;
       color: #fff;
-      border-bottom:0;
-      margin-top: 2px;
-      margin-bottom:0px;
-      transition: all 0.1s;
+      box-shadow: none;
+      transition: all 0.3s;
     }
 
     .easy-staff-container .staff-member.two .viewProfile,
@@ -212,6 +213,8 @@
     color: #000;
     margin: 0 0 5px 0;
     color: #fff;
+    text-shadow: 1px 2px 1px rgba(0,0,0,0.9);
+    cursor: default;
   }
   .staff-member-banner .text h3{
     float:left;
@@ -224,6 +227,19 @@
   }
 
 
+.staff-member-single-page{
+  display: block;
+  margin: 0 auto;
+  padding: 40px 0;
+  clear: both;
+  max-width: 1024px;
+  overflow: hidden;
+}
+.staff-member-single-page img{
+  max-width: 100%;
+}
+
+
 .staff-member-container{
   display:block;
   margin:0 auto;
@@ -231,19 +247,26 @@
   width: 1024px;
   height:auto;
   background-color: #fff;
-  padding: 20px 40px;
+  padding: 20px 0px;
   overflow:hidden;
 }
+
 /*Related staff section */
 .related-staff-members{
-  float:left;
-  width:100%;
+  display: block;
+  width:1024px;
   height:auto;
-  margin:0 0 20px 0;
+  margin: 0 auto;
   font-size: 24px;
   padding:20px 0 0 0;
   text-align:center;
   font-weight: 900;
   color:#3e6391;
   border-top: 1px solid #21344c;
+}
+
+.related-staff-members h3{
+  margin: 0;
+  padding: 0;
+  line-height: normal;
 }
